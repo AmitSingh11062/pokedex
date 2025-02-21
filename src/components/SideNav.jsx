@@ -15,7 +15,7 @@ export default function SideNav(props){
      return false;  
     })
     return (
-        <nav className={'' + (!showSideMenu ? "open" : '')}>
+        <nav className={' ' + (!showSideMenu ? "open" : '')}>
             <div className={"header" + (!showSideMenu ? "open" : '')}>
                 <button onClick={handleCloseMenu} 
                 className="open-nav-button">
@@ -26,15 +26,13 @@ export default function SideNav(props){
             <input placeholder="E.g. 001 or Bulba..." value={searchValue}onChange={(e) => {
                 setSearchValue(e.target.value)
             }} />
-            {filteredPokemon.map((pokemon, pokemonIndex)=>{
-                const truePokedexNumber = first151Pokemon.indexOf
-                (pokemon)
+            {filteredPokemon.map((pokemon, pokemonIndex) => {
+                const truePokedexNumber = first151Pokemon.indexOf(pokemon)
                 return(
                     <button onClick={() => {
                         setSelectedPokemon(truePokedexNumber)
                         handleCloseMenu()
-                    }} key={pokemonIndex} className={'nav-card'+ (pokemonIndex === selectedPokemon ? 
-                    'nav-card-selected':'')}>
+                    }} key={pokemonIndex} className={'nav-card '+ (pokemonIndex === selectedPokemon ? ' nav-card-selected' : ' ')}>
                         <p>{getFullPokedexNumber(truePokedexNumber)}</p>
                         <p>{pokemon}</p>
                     </button>
